@@ -1,7 +1,9 @@
 # Agilent-ESA-Series-FLEXlm
 Agilent ESA-Series Spectrum Analyzer FLEXlm Crypt Generator
 
-Experimental interactive CGI to generate license keys for older Agilent ESA-series spectrum analyzers.
+Experimental interactive CGI to generate license keys for enabling options on older Agilent ESA-series spectrum analyzers.
+
+Some options may require additional hardware or updated firmware.
 
 Requires a writable 'tmp' directory under you cgi-bin directory.
 

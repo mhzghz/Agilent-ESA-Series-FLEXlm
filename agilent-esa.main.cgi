@@ -18,15 +18,15 @@ print <<EOF;
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
 <html>
 <head>
-<title>Agilent ESA-Series FLEXlm Crypt Generator</title>
+<title>Agilent ESA/ESG-Series FLEXlm Crypt Generator</title>
 </head>
 <body bgcolor="#D3D3D3" text="#000000" link="blue">
 <font face="Helvetica">
 
 <center>
-<table border="10" cellpadding="10">
+<table border="10" cellpadding="8">
 <tr>
-<td bgcolor="#A3A3A3"><font size="12" face="Helvetica" color="#82007C"><b><center>Agilent ESA-Series Spectrum Analyzers<br>FLEXlm Crypt Generator</center></b></font></td>
+<td bgcolor="#A3A3A3"><font size="10" face="Helvetica" color="#82007C"><b><center>Agilent ESA-Series Spectrum Analyzer<br>Agilent ESG-Series Signal Generator<br>FLEXlm Crypt Generator</center></b></font></td>
 </tr>
 </table>
 </center>
@@ -46,6 +46,7 @@ print <<EOF;
 
 <tr><td align="right"><b>Select an Option:</b></td>
 <td><select name="option">
+<option>[ESA Options]</option>
 <option>060</option>
 <option>106</option>
 <option>219</option>
@@ -76,6 +77,17 @@ print <<EOF;
 <option>B7B</option>
 <option>B7K</option>
 <option>UKB</option>
+<option>[ESG Options]</option>
+<option>100</option>
+<option>101</option>
+<option>200</option>
+<option>201</option>
+<option>202</option>
+<option>404</option>
+<option>406</option>
+<option>300</option>
+<option>UN5</option>
+<option>UN7</option>
 </select></td><td></td></tr>
 
 </table>

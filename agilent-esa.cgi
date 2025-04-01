@@ -73,7 +73,7 @@ print "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 3.2//EN\">".
       "<body bgcolor=\"#D3D3D3\" text=\"#000000\" link=\"blue\">".
 	  "<font face=\"Helvetica\">\n".
       "<center>".
-      "<h1>Agilent ESA-Series Spectrum Analyzers<br>FLEXlm Crypt Generator Results</h1>".
+      "<h1>Agilent ESA-Series Spectrum Analyzer<br>Agilent ESG-Series Signal Generator<br>FLEXlm Crypt Generator Results</h1>".
       "</center>".
 	  "<blockquote>".
 	  "<b>Host ID:</b> <font color=\"red\"><tt>$hostid</tt></font><br>\n".
@@ -88,12 +88,12 @@ system("export WINEDEBUG=-all; /usr/bin/wine /usr/local/bin/lmcryptTMOMID01.exe 
 system("/bin/cat license.lic | awk '{print \$7}' > key");
 
 open(F, "<", "key");
- print "<br><b>License Key:</b> <font color=\"blue\"><tt>";
+ print "<br><b>License Key:</b> <font size=\"+2\" color=\"blue\"><tt><b>";
   while(<F>) {
   chomp;
   print;
 }
 close F;
 
-print "</tt></font>";
-print "<pre>This is still kinda <a href=\"https://www.eevblog.com/forum/testgear/enabling-options-on-agilent-esa-series-e4402b-e4404b-e4405b-e4407b/\">experimental</a></pre></blockquote></font></body></html>";
+print "</b></tt></font>";
+print "<pre>This is still kinda <a href=\"https://www.eevblog.com/forum/testgear/enabling-options-on-agilent-esa-series-e4402b-e4404b-e4405b-e4407b/\">experimental</a>. No idea if it's accurate.</pre></blockquote></font></body></html>";

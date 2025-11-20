@@ -25,4 +25,4 @@ Also requires the installation of the included 'lmcryptTMOMID01.exe' binary into
 
 http://gbppr.ddns.net/agilent-esa.main.cgi
 
-http:/gbppr.ddns.net/agilent-esg.main.cgi
+http://gbppr.ddns.net/agilent-esg.main.cgi

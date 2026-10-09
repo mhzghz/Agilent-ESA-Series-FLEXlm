@@ -21,6 +21,8 @@ Requires the installation of Wine: https://www.winehq.org
 
 Also requires the installation of the included 'lmcryptTMOMID01.exe' binary into '/usr/local/bin'.
 
+UPDATE: After a series of apt upgrades, it now appears you can't easily call Wine from a standard Perl CGI script, and I can't figure out how to fix it... Arrgh!
+
 ***Try it out!*** 
 
 http://gbppr.ddns.net/agilent-esa.main.cgi

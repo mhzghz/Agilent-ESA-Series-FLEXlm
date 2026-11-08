@@ -13,6 +13,26 @@ $| = 1;
 use warnings;
 require "flush.pl";
 
+# Wine Fixes
+# Create a compliant XDG_RUNTIME_DIR for the web user
+# $< contains the numeric UID of the running user (e.g. 33 for www-data)
+my $runtime_dir = "/tmp/runtime-$<";
+
+if (! -d $runtime_dir) {
+  mkdir($runtime_dir, 0700) or die "Cannot create $runtime_dir: $!";
+}
+# Enforce 0700 permissions strictly (required by XDG spec)
+chmod(0700, $runtime_dir);
+
+# Export environment variables
+$ENV{HOME}            = '/var/www';
+$ENV{WINEPREFIX}      = '/var/www/.wine';
+$ENV{XDG_RUNTIME_DIR} = $runtime_dir;
+$ENV{WINEDEBUG}       = '-all';
+
+# Disable Wayland explicitly so Wine falls back cleanly to X11/headless
+delete $ENV{WAYLAND_DISPLAY};
+
 ## Create a random directory for working files
 #
 my $sec = 0;
@@ -83,7 +103,8 @@ open(F, ">", "license.lic") or die "Can't open license.lic: $!\n" ;
   print F "FEATURE $option TMOMID01 1.0 permanent uncounted 0123456789AB HOSTID=$hostid\n";
 close F;
 
-system("export WINEDEBUG=-all; /usr/bin/wine /usr/local/bin/lmcryptTMOMID01.exe license.lic");
+#system("export WINEDEBUG=-all; /usr/bin/wine /usr/local/bin/lmcryptTMOMID01.exe license.lic");
+system("/usr/bin/xvfb-run -a /usr/bin/wine /usr/local/bin/lmcryptTMOMID01.exe license.lic");
 
 system("/bin/cat license.lic | awk '{print \$7}' > key");
 

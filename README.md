@@ -19,7 +19,23 @@ Requires a writable 'tmp' directory within your 'cgi-bin' directory and the abil
       
 Requires the installation of Wine: https://www.winehq.org
 
-Also requires the installation of the included 'lmcryptTMOMID01.exe' binary into '/usr/local/bin'.
+To call Wine from a Perl CGI, you may need to turn off the syscall filtering and memory protection.
+
+You can do that via: `sudo systemctl edit apache2`
+
+And adding the following:
+
+```
+[Service]
+SystemCallFilter=
+SystemCallArchitectures=
+MemoryDenyWriteExecute=no
+```
+Save and then run: `sudo systemctl daemon-reload` and `sudo systemctl restart apache2`
+
+Be sure to check the `CGI-NOTES-README.txt` file for more information on setting up Wine/Apache user environment.
+
+It also requires the installation of the included 'lmcryptTMOMID01.exe' binary into '/usr/local/bin'.
 
 
 
